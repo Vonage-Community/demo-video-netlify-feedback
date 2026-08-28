@@ -1,0 +1,33 @@
+// For format details, see https://aka.ms/devcontainer.json. For config options, see the
+// README at: https://github.com/devcontainers/templates/tree/main/src/javascript-node
+{
+    "name": "Feedback App Environment",
+    "image": "mcr.microsoft.com/devcontainers/javascript-node:1-22-bookworm",
+    "hostRequirements": {
+        "cpus": 2
+    },
+    "waitFor": "onCreateCommand",
+    "updateContentCommand": "npm install",
+    "postCreateCommand": "npm install && npm install -g netlify-cli",
+    "postAttachCommand": "gh codespace ports visibility 8888:public -c $CODESPACE_NAME && node setup.js && npm start",
+    "customizations": {
+        "codespaces": {
+            "openFiles": [
+                "public/index.html"
+            ]
+        }
+    },
+    "portsAttributes": {
+        "8888": {
+            "label": "Feedback app",
+            "onAutoForward": "openPreview",
+            "protocol": "http"
+        }
+    },
+    "forwardPorts": [
+        8888
+    ],
+    "features": {
+        "ghcr.io/devcontainers/features/github-cli:1": {}
+    }
+}
