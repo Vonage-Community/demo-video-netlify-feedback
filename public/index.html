@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Session Feedback</title>
+  <link rel="stylesheet" href="style.css">
+
+  <!-- Vonage Video Client SDK -->
+  <script src="https://video.standard.vonage.com/v2/js/opentok.min.js"></script>
+</head>
+
+<body>
+
+  <main class="feedback-container">
+    <header class="form-header">
+      <!-- This will default to a generic greeting, but JS will swap it if a session exists -->
+      <h1 id="session-title-display">Leave us Feedback</h1>
+      <p class="form-subtitle">We'd love to hear your thoughts!</p>
+    </header>
+
+    <form id="feedback-form" novalidate>
+      <!-- Star Rating UI -->
+      <div class="rating-group">
+        <label class="field-label">How would you rate this session?</label>
+        <div class="stars" role="radiogroup" aria-label="Star rating">
+          <input type="radio" name="rating" id="star5" value="5"><label for="star5" title="5 stars">★</label>
+          <input type="radio" name="rating" id="star4" value="4"><label for="star4" title="4 stars">★</label>
+          <input type="radio" name="rating" id="star3" value="3"><label for="star3" title="3 stars">★</label>
+          <input type="radio" name="rating" id="star2" value="2"><label for="star2" title="2 stars">★</label>
+          <input type="radio" name="rating" id="star1" value="1"><label for="star1" title="1 star">★</label>
+        </div>
+      </div>
+
+      <!-- Vonage Publisher Container -->
+      <div class="video-group">
+        <label class="field-label">Record a 20-Second Video (Optional)</label>
+        <div id="publisher-container"></div>
+        <div class="video-controls">
+          <button id="enable-camera-btn" type="button" class="secondary-btn">
+            Enable Camera
+          </button>
+          <button type="button" id="record-btn" class="secondary-btn" style="display: none;">Start Recording</button>
+          <button type="button" id="stopRecordBtn" class="danger-btn" style="display: none;">Stop Recording</button>
+          <p id="timer-display" class="timer-display" style="display: none;">20s remaining</p>
+        </div>
+      </div>
+
+      <!-- Text Fallback -->
+      <div class="input-group">
+        <label class="field-label" for="text-feedback">Written Feedback (Optional)</label>
+        <textarea id="text-feedback" name="textFeedback" rows="4"
+          placeholder="Tell us what you enjoyed and what we could improve..."></textarea>
+      </div>
+
+      <div class="form-row">
+        <div class="input-group">
+          <label class="field-label" for="attendee-name">Name</label>
+          <input type="text" id="attendee-name" name="name" required placeholder="Your name">
+        </div>
+
+        <div class="input-group">
+          <label class="field-label" for="social-handle">Social Handle</label>
+          <div class="social-picker">
+            <select id="social-platform" name="socialPlatform" aria-label="Social platform">
+              <option value="twitter">Twitter / X</option>
+              <option value="instagram">Instagram</option>
+              <option value="bluesky">Bluesky</option>
+              <option value="threads">Threads</option>
+              <option value="linkedin">LinkedIn</option>
+              <option value="linkedin">Mastadon</option>
+            </select>
+            <input type="text" id="social-handle" name="socialHandle" placeholder="@username">
+          </div>
+        </div>
+      </div>
+
+      <!-- Legal Consent -->
+      <div class="consent-group">
+        <input type="checkbox" id="consent" name="consent" required>
+        <label for="consent">I agree that this feedback may be used in promotional materials. <a id="consentEmailLink"
+            href="">Request deletion</a>.</label>
+      </div>
+
+      <button type="submit" id="submit-btn" class="primary-btn" disabled>Submit Feedback</button>
+    </form>
+  </main>
+
+  <script src="app.js"></script>
+</body>
+
+</html>
