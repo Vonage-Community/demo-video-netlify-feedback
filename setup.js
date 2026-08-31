@@ -71,7 +71,7 @@ function setApiKey(data) {
 
 function setGithubEmail(data) {
   if (data.toString().replace(/\n/g, '').length === 0 || data.toString().replace(/\n/g, '') === ' ') {
-    console.log('(Can not be blank.) Enter your GitHub email address:');
+    console.log('(Can not be blank.) Enter your primary GitHub email address:');
   } else {
     process.env.ADMIN_EMAIL = data.toString().replace(/\n/g, '');
     step = 'SET_API_KEY';
@@ -82,7 +82,7 @@ function setGithubEmail(data) {
 
 function setApiSecret(data) {
   if (data.toString().replace(/\n/g, '').length === 0 || data.toString().replace(/\n/g, '') === ' ') {
-    console.log('(Can not be blank.) Enter you API secret:');
+    console.log('(Can not be blank.) Enter your API secret:');
   } else {
     process.env.VONAGE_API_SECRET = data.toString().replace(/\n/g, '');
     step = 'SET_APP_NAME';
@@ -241,8 +241,9 @@ function createApp(data) {
 
             //Search and Buy phone number
             process.env.VONAGE_APPLICATION_NAME = data.toString().replace(/\n/g, '');
-            step = 'BUY_NUMBER';
-            console.log('Want to Buy a number? (Y/N):');
+            // step = 'BUY_NUMBER';
+            // console.log('Want to Buy a number? (Y/N):');
+            writeEnv();
 
           } catch (error) {
             console.error('An error occurred:', error);
