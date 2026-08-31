@@ -715,8 +715,8 @@ dialog::backdrop {
    ========================================= */
 .github-promo-badge {
   position: fixed;
-  bottom: 24px;
-  right: 24px;
+  bottom: 50px;
+  right: 25px;
   display: flex;
   align-items: center;
   gap: 10px;
