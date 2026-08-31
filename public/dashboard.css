@@ -314,7 +314,7 @@ body {
    =========================================================== */
 #setupFab {
     position: fixed;
-    bottom: 28px;
+    bottom: 50px;
     right: 28px;
     width: 56px;
     height: 56px;
