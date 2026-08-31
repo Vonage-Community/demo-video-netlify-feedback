@@ -42,9 +42,11 @@ Open your newly deployed site's settings in the [Netlify dashboard](https://app.
 * Scroll down to **External providers** and click **Add provider**.
 * Select **GitHub**, leave "Use default configuration" checked, and click **Save**.
 
-That's it! You can now log into your dashboard using your GitHub account.
+That's it! You can now log into your Feedback App's dashboard (https://YOUR-NETLIFY-PROJECT.netlify.app/dashboard) using your GitHub account.
 
-## ⚙️ Technolgies used
+> Note: If you see a notification in the bottom right of your Feedback App about it being Private, click make it Public so that people will be able to use your application to leave feedback.
+
+## ⚙️ Technologies used
 
 Vonage Video API [[documentation](https://developer.vonage.com/en/video/overview)]
 
