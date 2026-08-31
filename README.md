@@ -12,13 +12,15 @@ The easiest way to run this application is by using GitHub Codespaces. This sets
 
 Once the environment loads, the setup script will run automatically to configure your Vonage and Netlify credentials!
 
-When ready, the Codespaces terminal will ask for your GitHub Email address, this will be used when logging into the application's dashboard.
+When ready, the Codespaces terminal will ask for your **primary** GitHub [email address](https://github.com/settings/emails), this will be used when logging into the application's dashboard.
 
 The setup script will also create the Vonage Application needed for the Video testimonials. It will ask for API Key and API Secret which can be found in the [Vonage Dashboard](https://dashboard.vonage.com)
 
 Once you have tried out and are happy with the application, it's time to deploy to Netlify.
 
 In a new Codespaces terminal window, enter these commands:
+
+> Note: for the intermediate steps, selecting the default (press Enter) is just fine.
 
 netlify login
 
@@ -33,10 +35,10 @@ netlify deploy --build --prod
 To log into your speaker dashboard, you just need to turn on GitHub as a login provider in your Netlify settings.
 
 **1. Go to your Netlify Dashboard**
-Open your newly deployed site's settings in Netlify.
+Open your newly deployed site's settings in the [Netlify dashboard](https://app.netlify.com/).
 
 **2. Enable GitHub**
-* Go to **Site configuration > Identity**.
+* Go to **Project configuration > Identity**.
 * Scroll down to **External providers** and click **Add provider**.
 * Select **GitHub**, leave "Use default configuration" checked, and click **Save**.
 
